@@ -6,7 +6,7 @@ This README is for my version of the lottery-react app developed in the udemy.co
 npm create react-app lottery-react
 ```
 
-## Update `lottery-react/src/utils/lottery.js`
+## Update `lottery-react/src/lottery.js`
 
 Before running this app you should deploy the [Lottery smart contract](/lottery/contracts/Lottery.sol) to the Rinkeby Test Network and update the `contractAddress` and `abi` variables in your **lottery-react/src/utils/lottery.js** file with the blockchain address and ABI of your deployed contract on the Rinkeby Test Network.
 
