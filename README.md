@@ -2,9 +2,7 @@
 
 ## Purpose of this Repo
 
-Up-to-date Solidity/web3.js/React code for the udemy.com course [Ethereum and Solidity: The Complete Developer's Guide](https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/).
-
-Solidity, web3.js & React code for the course [Ethereum and Solidity: The Complete Developer's Guide] (https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/), with personal notes/comments in the code for personal explanations.
+This repo contains up-to-date Solidity/web3.js/React code for the udemy.com course [Ethereum and Solidity: The Complete Developer's Guide](https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/), with personal notes/comments in the code for extra explanations.
 
 ## The Reason
 
