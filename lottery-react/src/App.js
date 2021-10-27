@@ -23,6 +23,7 @@ class App extends Component {
     const manager = await lottery.methods.manager().call();
     const players = await lottery.methods.getPlayers().call();
     const balance = await web3.eth.getBalance(lottery.options.address);
+    console.log(lottery.options.address);
     //this.setState({manager: manager}); -- to ES 2015 syntax below
     this.setState({manager, players, balance});   
     //Once state var has been used then we need initialize it ahead of time in aconstructor
@@ -32,21 +33,22 @@ class App extends Component {
     event.preventDefault();
     this.setState({ message: 'Waiting on transaction success...', enteringLottery: true });
     try {
+      await window.ethereum.enable();
       const accounts = await web3.eth.getAccounts();
       await lottery.methods.enter().send({
         from: accounts[0],
         value: web3.utils.toWei(this.state.value, 'ether')
       });
     } catch (err) {
-        this.setState({ message: 'Oops!! Invalid Entry.', enteringLottery: false });
+        this.setState({ message: err.message, enteringLottery: false });
       return
     } 
     this.setState({ message: 'You have been entered!', enteringLottery: false });
   };
 
   onClick = async () => {
-    const accounts = await web3.eth.getAccounts();
-
+    //const accounts = await web3.eth.getAccounts(); ---OLD CODE
+    const accounts = await ethereum.request({ method: 'eth_accounts' });
     this.setState({ message: 'Waiting on transaction success...', pickingWinner: true });
 
     await lottery.methods.pickWinner().send({
@@ -64,7 +66,7 @@ class App extends Component {
       <div>
         <div className="test-site-msg">
           This is a test-only deployment of the{" "}
-          <a href="https://github.com/kilobytesecurity/Ethereum/lottery-react">
+          <a href="https://github.com/kilobytesecurity/Ethereum/tree/master/lottery-react">
             Lottery React app
           </a>, based on the udemy.com course{" "}
           <a href="https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/">
