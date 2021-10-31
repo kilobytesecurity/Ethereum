@@ -5,18 +5,21 @@ import Layout from '../components/Layout';
 import { Link } from '../routes';
 /*
 class CampaignIndex extends Component {
+    //NextJS doesnt execute react method componentDidMount() on the server like we require.
+    //thats why we change to getInitialProps() a speciffically NextJS method below
     async componentDidMount() {
         const campaigns = await factory.methods.getDeployedCampaigns().call()
         console.log(campaigns);
     }
     render() {
-        return <div>Some Shit!!!!</div>
+        return <div>Some Shyt!!!!</div>
     }
 }
 */
 class CampaignIndex extends Component {
     //Static- func not assigned to instances of class, no need to create index
     //Its called before component gets rendered
+    //this method is very speciffic to ONLY NextJS
     static async getInitialProps() {
         const campaigns = await factory.methods.getDeployedCampaigns().call();
         return {campaigns};

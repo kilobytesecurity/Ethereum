@@ -41,7 +41,7 @@ contract Campaign {
     // function, instead of creating a memory Struct, which the code was proviously
     // doing, we now have to create a storage Struct.
     //
-    // And finally, wherever the course code has the line `requests.length` gets replaced
+    // And finally, wherever the course code has the line `requests.length` it gets replaced
     // by `numRequests`.
     //
     // https://docs.soliditylang.org/en/v0.7.0/070-breaking-changes.html#mappings-outside-storage

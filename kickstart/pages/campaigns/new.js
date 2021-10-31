@@ -6,6 +6,7 @@ import web3 from "../../ethereum/web3";
 import { Router } from '../../routes';
 
 class CampaignNew extends Component {
+    //Default values/states
     state = {
         minimumContribution: '',
         errorMessage: '',
@@ -15,6 +16,7 @@ class CampaignNew extends Component {
         event.preventDefault();
         this.setState({loading: true, errorMessage: ''});
         try {
+            await window.ethereum.enable();
             const accounts = await web3.eth.getAccounts();
             await factory.methods
                 .createCampaign(this.state.minimumContribution)

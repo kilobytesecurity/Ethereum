@@ -9,7 +9,8 @@ import {Link} from '../../routes';
 class CampaignShow extends Component {
     //Gets called automatically before component is rendered
     static async getInitialProps(props) {
-        //Get the address of the deployed campaign from props.query property    
+        //Get the address of the deployed campaign from props.query property
+        //address is the name of the prop passed down from our route.js file    
         const campaign = Campaign(props.query.address);
         //console.log(props.query.address);
         const summary = await campaign.methods.getSummary().call();
