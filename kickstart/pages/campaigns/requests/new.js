@@ -24,6 +24,7 @@ class RequestNew extends Component {
         const { description, value, recipient} = this.state;
         this.setState({loading: true, errorMessage: ''});
         try {
+            await window.ethereum.enable();
             const accounts = await web3.eth.getAccounts();
             await campaign.methods
                 .createRequest(

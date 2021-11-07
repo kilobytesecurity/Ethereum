@@ -5,6 +5,7 @@ import Campaign from '../ethereum/campaign';
 
 class RequestRow extends Component {
     onApprove = async () => {
+        await window.ethereum.enable();
         const campaign = Campaign(this.props.address);
         const accounts = await web3.eth.getAccounts();
         await campaign.methods.approveRequest(this.props.id).send({
@@ -12,6 +13,7 @@ class RequestRow extends Component {
         });
     };
     onFinalize = async () => {
+        await window.ethereum.enable();
         const campaign = Campaign(this.props.address);
         const accounts = await web3.eth.getAccounts();
         await campaign.methods.finalizeRequest(this.props.id).send({

@@ -14,7 +14,8 @@ class CampaignShow extends Component {
         const campaign = Campaign(props.query.address);
         //console.log(props.query.address);
         const summary = await campaign.methods.getSummary().call();
-        //console.log(summary);
+        //console.log(summary);---It retruns an object(not an array although it seems like one)
+        //return well labled props
         return {
             address: props.query.address,     //This is needed to be passed to contributeForm
             minimumContribution: summary[0],

@@ -16,7 +16,7 @@ class RequestIndex extends Component {
         //by using the Promise.all helper
         const requests = await Promise.all(
             //Array(3).fill() - Create an array of size 3 and fill it with indices
-            Array(requestCount).fill().map((element, index) => {
+            Array(parseInt(requestCount)).fill().map((element, index) => {
                 return campaign.methods.requests(index).call();
             })
         );

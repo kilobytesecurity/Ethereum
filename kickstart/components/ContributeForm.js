@@ -15,12 +15,14 @@ class ContributeForm extends Component {
         const campaign = Campaign(this.props.address);
         this.setState({loading: true, errorMessage: ''});
         try {
+            await window.ethereum.enable();
             const accounts = await web3.eth.getAccounts();
             await campaign.methods.contribute().send({
                 from: accounts[0],
                 value: web3.utils.toWei(this.state.value, 'ether')
             });
-            //Do a page refresh 
+            //Do a page refresh to update approvers and campaign balance
+            // `` ES 2015 template string
             Router.replaceRoute(`/campaigns/${this.props.address}`)
         } catch (err) {
             this.setState({ errorMessage: err.message});
