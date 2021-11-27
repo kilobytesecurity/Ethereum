@@ -60,7 +60,7 @@ contract Campaign {
             msg.value >= minimumContribution,
             "A minumum contribution is required."
         );
-        approvers[msg.sender] = true;  //msg.sender doen'st actually get staored on the mapping
+        approvers[msg.sender] = true;  //msg.sender doesn't actually get staored on the mapping
         approversCount++;
     }
 
@@ -75,7 +75,7 @@ contract Campaign {
         newRequest.recipient = recipient;
         newRequest.complete = false;
         newRequest.approvalCount = 0;
-        //Struct, a refrenece type doesnt have to be initialised.
+        //Struct, a refrence type doesnt have to be initialised.
     }
 
     function approveRequest(uint256 index) public {
