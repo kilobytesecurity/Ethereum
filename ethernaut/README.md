@@ -2,12 +2,12 @@ This is a set of the smart contracts utilised for the [ethernaut](https://ethern
 
 ## Getting Started
 
-- Level 0: No need for an attack smart contract.
-- Level 1: No need for an attack smart contract.
-- Level 2: No need for an attack smart contract.
-- Level 3 Coin Flip: EvilCoinFlip.sol.
-- Level 4. Telephone : EvilTelephone.sol.
-- Level 5. Token : 
+- [Level 0. Hello Ethernaut](https://ethernaut.openzeppelin.com/level/0x4E73b858fD5D7A5fc1c3455061dE52a53F35d966): No need for an attack smart contract.
+- [Level 1. Fallback](https://ethernaut.openzeppelin.com/level/0x9CB391dbcD447E645D6Cb55dE6ca23164130D008) : No need for an attack smart contract.
+- [Level 2. Fallout](https://ethernaut.openzeppelin.com/level/0x5732B2F88cbd19B6f01E3a96e9f0D90B917281E5) : No need for an attack smart contract.
+- [Level 3. Coin Flip](https://ethernaut.openzeppelin.com/level/0x4dF32584890A0026e56f7535d0f2C6486753624f) : EvilCoinFlip.sol.
+- [Level 4. Telephone](https://ethernaut.openzeppelin.com/level/0x0b6F6CE4BCfB70525A31454292017F640C10c768) : EvilTelephone.sol.
+- [Level 5. Token](https://ethernaut.openzeppelin.com/level/0x63bE8347A617476CA461649897238A31835a32CE) : 
 - Level 6. Delegation : 
 - Level 7. Force : 
 - Level 8. Vault : 
